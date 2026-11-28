@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import userRouter from './routes/user.routes.js'
 
 dotenv.config();
 
@@ -17,3 +18,6 @@ app.get('/',(req,res) => {
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en http://localhost:${PORT}`);
 });
+
+
+app.use('/users', userRouter);
